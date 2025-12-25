@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
 import "./index.css";
-import AppRoutes from "./Config/routes";
+import AppRoutes from "./Config/Routes";
 import { ChatProvider } from "./Context/ChatContext";
 
 createRoot(document.getElementById("root")).render(

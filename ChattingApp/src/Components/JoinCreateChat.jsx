@@ -85,7 +85,7 @@ function JoinCreateChat() {
             />
           </div>
           <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
-            Welcome Back
+            Ting Ting
           </h1>
           <p className="text-slate-400 text-sm">
             Join a room or create a new one
