@@ -32,7 +32,6 @@ const ChatPage = () => {
   const chatBoxRef = useRef(null);
   const [stompClient, setStompClient] = useState(null);
 
-  // --- LOGIC GIỮ NGUYÊN ---
   useEffect(() => {
     if (!roomId) return;
     const loadMessages = async () => {
