@@ -7,7 +7,6 @@ import { baseURL } from "../Config/AxiosHelper";
 import SockJS from "sockjs-client";
 import { Stomp } from "@stomp/stompjs";
 import { getMessages } from "../Services/RoomService";
-import { timeAgo } from "../Config/TimeStamp";
 
 const ChatPage = () => {
   const {
@@ -31,6 +30,16 @@ const ChatPage = () => {
   const inputRef = useRef(null);
   const chatBoxRef = useRef(null);
   const [stompClient, setStompClient] = useState(null);
+
+  const formatTime = (isoString) => {
+    if (!isoString) return "";
+    const date = new Date(isoString);
+    return date.toLocaleTimeString("vi-VN", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+  };
 
   useEffect(() => {
     if (!roomId) return;
@@ -182,7 +191,7 @@ const ChatPage = () => {
                         isMe ? "text-indigo-200 text-right" : "text-slate-500"
                       }`}
                     >
-                      {timeAgo(message.timeStamp)}
+                      {formatTime(message.timeStamp)}
                     </p>
                   </div>
                 </div>
